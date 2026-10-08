@@ -1,3 +1,4 @@
+import { Ionicons } from "@react-native-vector-icons/ionicons";
 import {
     StyleSheet,
     Text,
@@ -6,10 +7,21 @@ import {
 
 export default function SearchBar() {
 return(
+    
     <View style={styles.background}>
+        <Ionicons
+              name="search"
+              color="#72777d"
+              size={24}
+        />
         <Text style={styles.textSection}>
             Search Wikipedia
         </Text>
+        <Ionicons
+              name="mic-sharp"
+              color="#72777d"
+              size={24}
+        />
     </View>
 )
 }
@@ -24,6 +36,7 @@ const styles = StyleSheet.create({
         maxHeight: 50,
         width: "100%",
         margin: 8,
+        padding: 16,
         borderRadius: 25,
     },
 
