@@ -8,7 +8,7 @@ export default function SearchBar() {
 return(
     <View style={styles.background}>
         <Text style={styles.textSection}>
-            Search
+            Search Wikipedia
         </Text>
     </View>
 )
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
         maxHeight: 50,
         width: "100%",
         margin: 8,
+        borderRadius: 25,
     },
 
     textSection: {

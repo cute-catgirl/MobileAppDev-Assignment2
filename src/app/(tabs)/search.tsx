@@ -15,6 +15,7 @@ export default function Search() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 8,
     alignItems: "center",
     justifyContent: "flex-start",
   },
