@@ -1,11 +1,11 @@
-import ArticleCard from "@/components/ArticleCard";
-import articles from "@/data/articles";
+import { Link } from "expo-router";
 import { StyleSheet, View } from "react-native";
 
-export default function Search() {
+export default function Home() {
   return (
     <View style={styles.container}>
-      <ArticleCard article={articles["first"]}></ArticleCard>
+      <Link href={"/article/first"}>Link to article 1</Link>
+      <Link href={"/article/second"}>Link to article 2</Link>
     </View>
   );
 }

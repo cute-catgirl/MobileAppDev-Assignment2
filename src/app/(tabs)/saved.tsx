@@ -6,7 +6,7 @@ export default function Saved() {
   return (
     <View style={styles.container}>
       <ArticleCard
-        article={articles[0]}
+        article={articles["first"]}
         titleStyle={styles.articleTitle}
       ></ArticleCard>
     </View>
