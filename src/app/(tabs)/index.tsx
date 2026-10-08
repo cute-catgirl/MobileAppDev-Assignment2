@@ -1,5 +1,23 @@
-import { Text, Image, View, StyleSheet } from "react-native";
 import articles from "@/data/articles";
+import { ArticleSection } from "@/types";
+import { Image, StyleSheet, Text, View } from "react-native";
+
+function Section({ section }: { section: ArticleSection }) {
+  if (section.title) {
+    return (
+      <View>
+        <Text style={{ fontSize: 24 }}>{section.title}</Text>
+        <Text>{section.content}</Text>
+      </View>
+    );
+  } else {
+    return (
+      <View>
+        <Text>{section.content}</Text>
+      </View>
+    );
+  }
+}
 
 export default function Index() {
   return (
@@ -9,10 +27,12 @@ export default function Index() {
       <Text>title: {articles[0].title}</Text>
       <Text>description: {articles[0].description}</Text>
       <Text>Image:</Text>
-      <View >
-        <Image source={articles[0].image} style={{width:300, height:160}} />
+      <View>
+        <Image source={articles[0].image} style={{ width: 300, height: 160 }} />
       </View>
-      <Text>content: {articles[0].content}</Text>
+      {articles[0].content.map((value, index) => (
+        <Section key={index} section={value}></Section>
+      ))}
     </View>
   );
 }
