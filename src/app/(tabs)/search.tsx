@@ -1,9 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import ArticleCard from "@/components/ArticleCard";
+import articles from "@/data/articles";
+import { StyleSheet, View } from "react-native";
 
 export default function Search() {
   return (
     <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
+      <ArticleCard article={articles[0]}></ArticleCard>
     </View>
   );
 }
