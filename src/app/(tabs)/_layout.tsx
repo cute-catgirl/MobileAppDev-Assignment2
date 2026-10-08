@@ -33,6 +33,7 @@ export default function TabLayout() {
               size={24}
             />
           ),
+          headerTitle: "Saved",
         }}
       />
       <Tabs.Screen
