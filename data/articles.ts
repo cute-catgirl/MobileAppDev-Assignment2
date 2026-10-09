@@ -32,5 +32,3 @@ const articles: Record<string, Article> = {
     ],
   },
 };
-
-export default articles;
