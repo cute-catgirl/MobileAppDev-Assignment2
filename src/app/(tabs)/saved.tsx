@@ -16,7 +16,7 @@ export default function Saved() {
         </View>
       </View>
       <ArticleCard
-        article={articles[0]}
+        article={articles["dummy"]}
         titleStyle={styles.articleTitle}
       ></ArticleCard>
     </View>
@@ -53,6 +53,10 @@ const styles = StyleSheet.create({
     backgroundColor: "blue",
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
+  },
+  articleTitle: {
+    fontStyle: "italic",
+    fontWeight: "800",
   },
   articleTitle: {
     fontStyle: "italic",
