@@ -8,7 +8,7 @@ export default function Search() {
     <View style={styles.container}>
       <SearchBar></SearchBar>
       <h1 style={styles.history}>History</h1>
-      <ArticleCard article={articles[0]}></ArticleCard>
+      <ArticleCard article={articles["first"]}></ArticleCard>
     </View>
   );
 }
