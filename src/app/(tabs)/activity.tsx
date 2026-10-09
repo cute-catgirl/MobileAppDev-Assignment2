@@ -19,7 +19,7 @@ export default function Activity() {
   };
   const savedArticles = {
     time: "October 2",
-    articleImages: [articles[0].image, articles[0].image, articles[0].image],
+    articleImages: [articles["dummy"].image, articles["dummy"].image, articles["dummy"].image],
   };
   const topCategories = ["Category 1", "Category 2", "Category 3"];
   return (

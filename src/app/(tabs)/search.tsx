@@ -1,9 +1,14 @@
+import ArticleCard from "@/components/ArticleCard";
+import SearchBar from "@/components/SearchBar";
+import articles from "@/data/articles";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function Search() {
   return (
     <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
+      <SearchBar></SearchBar>
+      <Text style={styles.history}>History</Text>
+      <ArticleCard article={articles["dummy"]}></ArticleCard>
     </View>
   );
 }
@@ -11,7 +16,19 @@ export default function Search() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 8,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
+    backgroundColor: "white",
+  },
+
+  history: {
+    width: "100%",
+    color: "rgb(28, 28, 30)",
+    fontFamily:
+      'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    fontWeight: 500,
+    fontSize: 18,
+    marginLeft: 16,
   },
 });
