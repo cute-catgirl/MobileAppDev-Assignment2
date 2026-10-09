@@ -12,7 +12,7 @@ export default function Index() {
           headerTitle: () => (
             <Image
               style={styles.wordmark}
-              source={require("@/assets/images/wikipedia_wordmark.svg")}
+              source={require("@/assets/images/wikipedia-wordmark.svg")}
             />
           ),
           headerRight: () => (

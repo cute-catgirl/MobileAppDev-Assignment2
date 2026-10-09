@@ -1,11 +1,13 @@
 import articles from "@/data/articles";
+import Ionicons from "@react-native-vector-icons/ionicons";
+import { Image } from "expo-image";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 
 export default function Home() {
   return (
     <View style={styles.container}>
       <View style={styles.tabContainer}>
-        <View style={styles.homeTab}>
+        <View style={[styles.homeTab, { borderBottomWidth: 3 }]}>
           <Text style={{ color: "#36c" }}>Community</Text>
           <View style={styles.tabBar}></View>
         </View>
@@ -13,12 +15,30 @@ export default function Home() {
           <Text>For you</Text>
           <View style={[styles.tabBar, { backgroundColor: "white" }]}></View>
         </View>
+        <View style={{ flex: 1 }}></View>
+        <View style={styles.languageContainer}>
+          <View style={styles.language}>
+            <Text
+              style={{ fontSize: 10, fontWeight: "bold", color: "#ffffff" }}
+            >
+              EN
+            </Text>
+          </View>
+          <Ionicons name="chevron-down" size={16} />
+        </View>
       </View>
 
       <View style={styles.infoBox}>
-        <Text style={styles.infoText}>
-          Content and resources selected by and about the Wikimedia community
-        </Text>
+        <View>
+          <Text style={styles.infoText}>
+            Content and resources selected by and about the Wikimedia community
+          </Text>
+        </View>
+        <Image
+          style={styles.infoImage}
+          source={require("@/assets/images/wikipedia-logo.svg")}
+          contentFit="contain"
+        ></Image>
       </View>
 
       <Text style={styles.date}>Today - Oct 08, 2026</Text>
@@ -49,6 +69,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     backgroundColor: "white",
+    width: "100%",
   },
   header: {
     width: "auto",
@@ -78,34 +99,48 @@ const styles = StyleSheet.create({
   },
   tabContainer: {
     paddingTop: 15,
-    width: "auto",
+    width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
     borderBottomColor: "#eafcf0",
-    borderBottomWidth: 1,
+    gap: 16,
   },
   homeTab: {
     alignItems: "center",
     justifyContent: "center",
+    borderBottomColor: "#36c",
   },
   tabBar: {
     height: 3,
-    width: "auto",
-    marginTop: 8,
-    backgroundColor: "#36c",
+    width: "100%",
+    marginTop: 4,
+    //backgroundColor: "#36c",
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
   infoBox: {
-    width: "auto",
+    width: "100%",
     marginTop: 16,
-    padding: 24,
+    padding: 16,
     borderRadius: 25,
     backgroundColor: "#eaecf0",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 4,
   },
   infoText: {
     color: "#54595d",
-    fontSize: 18,
+    fontSize: 16,
+    flex: 1,
+    marginLeft: 48,
+    textAlignVertical: "center",
+  },
+  infoImage: {
+    width: 50,
+    height: 50,
+    flexShrink: 0,
+    marginRight: 48,
   },
   date: {
     marginTop: 24,
@@ -122,19 +157,38 @@ const styles = StyleSheet.create({
     color: "#54595d",
   },
   card: {
-    width: "auto",
-    height: 300,
+    width: "100%",
+    flex: 1,
     marginVertical: 16,
     justifyContent: "flex-end",
-    padding: 16,
   },
   cardTextBox: {
     padding: 16,
+    margin: 16,
     borderRadius: 16,
     backgroundColor: "#f8f9fa",
   },
   cardTitle: {
     fontSize: 24,
     fontFamily: "serif",
+  },
+  language: {
+    borderRadius: 4,
+    width: 22,
+    height: 22,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#404244",
+  },
+  languageContainer: {
+    borderRadius: 6,
+    borderWidth: 1.5,
+    borderColor: "#404244",
+    width: 44,
+    height: 28,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
