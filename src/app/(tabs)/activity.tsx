@@ -10,11 +10,11 @@ export default function Activity() {
     time: "October 6",
     count: 7,
     graphInfo: [
-      {percent: 100, color: "#2b9381"}, 
-      {percent: 12, color: "#b5ddd6"}, 
-      {percent: 50, color: "#52aa9b"}, 
-      {percent: 25, color: "#8ac0b7"}
-    ]
+      { percent: 100, color: "#2b9381" },
+      { percent: 12, color: "#b5ddd6" },
+      { percent: 50, color: "#52aa9b" },
+      { percent: 25, color: "#8ac0b7" },
+    ],
   };
   const savedArticles = {
     time: "October 2",
@@ -32,7 +32,9 @@ export default function Activity() {
         <Text style={styles.displayedTimeSpentReadingText}>
           {Math.floor(timeReading / 60)}h {timeReading % 60}m
         </Text>
-        <Text style={styles.timeSpentReadingText}>Time spent reading this week</Text>
+        <Text style={styles.timeSpentReadingText}>
+          Time spent reading this week
+        </Text>
       </View>
 
       {/* articles read section */}
@@ -44,7 +46,9 @@ export default function Activity() {
               source={require("@/assets/images/icon.png")}
               style={styles.sectionActivityIcon}
             />
-            <Text style={styles.sectionHeaderText}>Articles read this month</Text>
+            <Text style={styles.sectionHeaderText}>
+              Articles read this month
+            </Text>
           </View>
           <Image
             source={require("@/assets/images/icon.png")}
@@ -60,7 +64,12 @@ export default function Activity() {
           <View style={styles.articlesReadGraph}>
             {readArticles.graphInfo.map((bar, b) => (
               <View key={b} style={styles.articleGraphEntry}>
-                <View style={[styles.articlesGraphItem, {height: `${bar.percent}%`, backgroundColor: bar.color}]}></View>
+                <View
+                  style={[
+                    styles.articlesGraphItem,
+                    { height: `${bar.percent}%`, backgroundColor: bar.color },
+                  ]}
+                ></View>
               </View>
             ))}
           </View>
@@ -76,7 +85,9 @@ export default function Activity() {
               source={require("@/assets/images/icon.png")}
               style={styles.sectionActivityIcon}
             />
-            <Text style={styles.sectionHeaderText}>Articles saved this month</Text>
+            <Text style={styles.sectionHeaderText}>
+              Articles saved this month
+            </Text>
           </View>
           <Image
             source={require("@/assets/images/icon.png")}
@@ -87,11 +98,17 @@ export default function Activity() {
         <View style={[styles.flexRow, styles.justifyBetween]}>
           <View>
             <Text style={styles.sectionTimeText}>{savedArticles.time}</Text>
-            <Text style={styles.sectionCountText}>{savedArticles.articleImages.length}</Text>
+            <Text style={styles.sectionCountText}>
+              {savedArticles.articleImages.length}
+            </Text>
           </View>
           <View style={styles.savedArticlesImageContainer}>
             {savedArticles.articleImages.map((articleImage, i) => (
-              <Image key={i} source={articleImage} style={styles.savedArticlesImage} />
+              <Image
+                key={i}
+                source={articleImage}
+                style={styles.savedArticlesImage}
+              />
             ))}
           </View>
         </View>
@@ -105,7 +122,9 @@ export default function Activity() {
             source={require("@/assets/images/icon.png")}
             style={styles.sectionActivityIcon}
           />
-          <Text style={styles.sectionHeaderText}>Top categories read this month</Text>
+          <Text style={styles.sectionHeaderText}>
+            Top categories read this month
+          </Text>
         </View>
         {/* section content */}
         {topCategories.map((category, c) => (
@@ -122,24 +141,22 @@ export default function Activity() {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     rowGap: 10,
   },
   activitySectionCard: {
+    minHeight: 100,
     backgroundColor: "#ffffff",
     borderColor: "#bdbcbc",
     borderWidth: 1,
     width: "80%",
     borderRadius: 5,
-    paddingVertical: 10,
-    paddingHorizontal: 10,
+    padding: 10,
     textAlign: "left",
+    justifyContent: "space-between",
   },
   flexRow: {
-    width: "100%",
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
   },
@@ -156,7 +173,7 @@ const styles = StyleSheet.create({
   },
   sectionHeaderText: {
     color: "#000000",
-    fontSize: 12
+    fontSize: 12,
   },
   sectionTimeText: {
     color: "#2c2c2c",
@@ -210,7 +227,6 @@ const styles = StyleSheet.create({
   savedArticlesImageContainer: {
     flexDirection: "row",
     columnGap: 5,
-    paddingRight: 5,
   },
   savedArticlesImage: {
     width: 30,
@@ -230,5 +246,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#ecebeb",
     width: "100%",
     height: 1,
-  }
+  },
 });
