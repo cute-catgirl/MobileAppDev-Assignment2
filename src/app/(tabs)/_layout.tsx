@@ -19,7 +19,7 @@ export default function TabLayout() {
               size={24}
             />
           ),
-          headerTitle: "Wikipedia",
+          headerShown: false,
         }}
       />
       <Tabs.Screen

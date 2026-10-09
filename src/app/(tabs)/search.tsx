@@ -1,13 +1,13 @@
 import ArticleCard from "@/components/ArticleCard";
 import SearchBar from "@/components/SearchBar";
 import articles from "@/data/articles";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Search() {
   return (
     <View style={styles.container}>
       <SearchBar></SearchBar>
-      <h1 style={styles.history}>History</h1>
+      <Text style={styles.history}>History</Text>
       <ArticleCard article={articles["dummy"]}></ArticleCard>
     </View>
   );

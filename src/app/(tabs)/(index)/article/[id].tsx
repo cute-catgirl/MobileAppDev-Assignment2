@@ -28,7 +28,11 @@ export default function Home() {
     return (
       <View style={styles.container}>
         <ScrollView style={{ width: "100%" }}>
-          <Image source={article.image} style={styles.coverImage}></Image>
+          <Image
+            source={article.image}
+            style={styles.coverImage}
+            resizeMode="cover"
+          ></Image>
           <View style={styles.articleContents}>
             <Text style={styles.header}>{article.title}</Text>
             <Text style={styles.description}>{article.description}</Text>

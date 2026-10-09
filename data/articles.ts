@@ -18,7 +18,7 @@ const articles: Record<string, Article> = {
   cat: {
     title: "Cat",
     description: "Small domesticated carnivorous mammal",
-    image: require("@/assets/images/articles/dummy-article.png"),
+    image: require("@/assets/images/articles/cat.jpg"),
     content: [
       {
         content:
