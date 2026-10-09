@@ -1,6 +1,7 @@
 import articles from "@/data/articles";
 import Ionicons from "@react-native-vector-icons/ionicons";
 import { Image } from "expo-image";
+import { Link } from "expo-router";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 
 export default function Home() {
@@ -48,16 +49,18 @@ export default function Home() {
         selected daily by editors
       </Text>
 
-      <ImageBackground
-        source={articles["dummy"].image}
-        style={styles.card}
-        imageStyle={{ borderRadius: 24 }}
-      >
-        <View style={styles.cardTextBox}>
-          <Text style={styles.cardTitle}>{articles["dummy"].title}</Text>
-          <Text style={styles.subtitle}>{articles["dummy"].description}</Text>
-        </View>
-      </ImageBackground>
+      <Link href="/article/cat" style={styles.cardLink}>
+        <ImageBackground
+          source={articles["cat"].image}
+          style={styles.card}
+          imageStyle={{ borderRadius: 24 }}
+        >
+          <View style={styles.cardTextBox}>
+            <Text style={styles.cardTitle}>{articles["cat"].title}</Text>
+            <Text style={styles.subtitle}>{articles["cat"].description}</Text>
+          </View>
+        </ImageBackground>
+      </Link>
     </View>
   );
 }
@@ -156,10 +159,15 @@ const styles = StyleSheet.create({
   subtitle: {
     color: "#54595d",
   },
-  card: {
+  cardLink: {
     width: "100%",
     flex: 1,
     marginVertical: 16,
+    justifyContent: "flex-end",
+  },
+  card: {
+    height: "100%",
+    width: "100%",
     justifyContent: "flex-end",
   },
   cardTextBox: {

@@ -19,7 +19,11 @@ export default function Activity() {
   };
   const savedArticles = {
     time: "October 2",
-    articleImages: [articles["dummy"].image, articles["dummy"].image, articles["dummy"].image],
+    articleImages: [
+      articles["dummy"].image,
+      articles["dummy"].image,
+      articles["dummy"].image,
+    ],
   };
   const topCategories = ["Category 1", "Category 2", "Category 3"];
   return (
@@ -44,26 +48,26 @@ export default function Activity() {
         <View style={[styles.flexRow, styles.justifyBetween]}>
           <View>
             <View style={styles.flexRow}>
-              <Ionicons 
-                name="book-outline"
+              <Ionicons
+                name="library-outline"
                 style={styles.sectionActivityIcon}
+                size={12}
               />
               <Text style={styles.sectionHeaderText}>
                 Articles read this month
               </Text>
             </View>
-            <Text style={styles.sectionTimeText}>
-              {readArticles.time}
-            </Text>
+            <Text style={styles.sectionTimeText}>{readArticles.time}</Text>
           </View>
-          <Ionicons 
+          <Ionicons
             name="chevron-forward-outline"
             style={styles.sectionDropdownIcon}
+            size={16}
           />
         </View>
         {/* section content */}
         <View style={[styles.flexRow, styles.justifyBetween]}>
-          <Text style={styles.sectionCountText}>{readArticles.count}</Text> 
+          <Text style={styles.sectionCountText}>{readArticles.count}</Text>
           <View style={styles.articlesReadGraph}>
             {readArticles.graphInfo.map((bar, b) => (
               <View key={b} style={styles.articleGraphEntry}>
@@ -88,6 +92,7 @@ export default function Activity() {
               <Ionicons
                 name="bookmark-outline"
                 style={styles.sectionActivityIcon}
+                size={12}
               />
               <Text style={styles.sectionHeaderText}>
                 Articles saved this month
@@ -95,9 +100,10 @@ export default function Activity() {
             </View>
             <Text style={styles.sectionTimeText}>{savedArticles.time}</Text>
           </View>
-          <Ionicons 
+          <Ionicons
             name="chevron-forward-outline"
             style={styles.sectionDropdownIcon}
+            size={16}
           />
         </View>
         {/* section content */}
@@ -121,9 +127,10 @@ export default function Activity() {
       <View style={styles.activitySectionCard}>
         {/* section header */}
         <View style={styles.flexRow}>
-          <Ionicons 
+          <Ionicons
             name="shapes-outline"
             style={styles.sectionActivityIcon}
+            size={12}
           />
           <Text style={styles.sectionHeaderText}>
             Top categories read this month
@@ -152,10 +159,10 @@ const styles = StyleSheet.create({
   activitySectionCard: {
     minHeight: 100,
     backgroundColor: "#ffffff",
-    borderColor: "#bdbcbc",
+    borderColor: "#dadde3",
     borderWidth: 1,
     width: "90%",
-    borderRadius: 5,
+    borderRadius: 8,
     padding: 10,
     textAlign: "left",
     justifyContent: "space-between",
@@ -169,14 +176,10 @@ const styles = StyleSheet.create({
   },
   sectionActivityIcon: {
     color: "#000000",
-    width: 12,
-    height: 12,
-    paddingRight: 20,
+    paddingRight: 6,
   },
   sectionDropdownIcon: {
     color: "#000000",
-    width: 16,
-    height: 16,
   },
   sectionHeaderText: {
     color: "#000000",

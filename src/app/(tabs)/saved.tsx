@@ -16,7 +16,15 @@ export default function Saved() {
         </View>
       </View>
       <ArticleCard
-        article={articles["dummy"]}
+        article={articles["cat"]}
+        titleStyle={styles.articleTitle}
+      ></ArticleCard>
+      <ArticleCard
+        article={articles["outerwilds"]}
+        titleStyle={styles.articleTitle}
+      ></ArticleCard>
+      <ArticleCard
+        article={articles["nitw"]}
         titleStyle={styles.articleTitle}
       ></ArticleCard>
     </View>
