@@ -1,11 +1,11 @@
 import { Article } from "@/types";
 import {
-  Image,
-  StyleProp,
-  StyleSheet,
-  Text,
-  TextStyle,
-  View,
+    Image,
+    StyleProp,
+    StyleSheet,
+    Text,
+    TextStyle,
+    View,
 } from "react-native";
 export default function ArticleCard({
   article,
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
-    maxHeight: 60,
+    maxHeight: 100,
     width: "100%",
     padding: 8,
   },
