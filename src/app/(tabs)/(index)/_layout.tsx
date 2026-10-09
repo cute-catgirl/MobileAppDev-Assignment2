@@ -1,4 +1,5 @@
 import Ionicons from "@react-native-vector-icons/ionicons";
+import { Image } from "expo-image";
 import { Link, Stack } from "expo-router";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 
@@ -8,7 +9,20 @@ export default function Index() {
       <Stack.Screen
         name="index"
         options={{
-          headerTitle: "Wikipedia",
+          headerTitle: () => (
+            <Image
+              style={styles.wordmark}
+              source={require("@/assets/images/wikipedia_wordmark.svg")}
+            />
+          ),
+          headerRight: () => (
+            <View style={styles.headerRight}>
+              <View style={styles.tabsButton}>
+                <Text style={{ fontSize: 10, fontWeight: "bold" }}>90</Text>
+              </View>
+              <Ionicons name="notifications" size={20}></Ionicons>
+            </View>
+          ),
         }}
       ></Stack.Screen>
       <Stack.Screen
@@ -17,7 +31,7 @@ export default function Index() {
           headerTitle: "",
           headerLeft: () => <></>,
           headerRight: () => (
-            <View style={styles.headerRight}>
+            <View style={[styles.headerRight, { width: "100%" }]}>
               <Link href="../">
                 <Ionicons name="arrow-back" size={20}></Ionicons>
               </Link>
@@ -52,9 +66,8 @@ const styles = StyleSheet.create({
     height: "100%",
     flexDirection: "row",
     gap: 24,
-    justifyContent: "center",
+    justifyContent: "flex-end",
     alignItems: "center",
-    width: "100%",
   },
   searchBox: {
     flex: 1,
@@ -75,5 +88,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+  },
+  wordmark: {
+    width: 150,
+    height: "100%",
+    resizeMode: "contain",
+    marginLeft: -16,
   },
 });
