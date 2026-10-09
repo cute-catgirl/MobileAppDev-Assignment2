@@ -1,5 +1,6 @@
 import { Ionicons } from "@react-native-vector-icons/ionicons";
 import { Tabs } from "expo-router";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function TabLayout() {
   return (
@@ -33,6 +34,17 @@ export default function TabLayout() {
               size={24}
             />
           ),
+          headerRight: () => (
+            <View style={styles.headerRight}>
+              <Ionicons name="filter" size={20}></Ionicons>
+              <Ionicons name="search" size={20}></Ionicons>
+              <View style={styles.tabsButton}>
+                <Text style={{ fontSize: 10, fontWeight: "bold" }}>90</Text>
+              </View>
+              <Ionicons name="notifications" size={20}></Ionicons>
+              <Ionicons name="ellipsis-vertical" size={20}></Ionicons>
+            </View>
+          ),
           headerTitle: "Saved",
         }}
       />
@@ -47,6 +59,14 @@ export default function TabLayout() {
               size={24}
             />
           ),
+          headerRight: () => (
+            <View style={styles.headerRight}>
+              <View style={styles.tabsButton}>
+                <Text style={{ fontSize: 10, fontWeight: "bold" }}>90</Text>
+              </View>
+              <Ionicons name="notifications" size={20}></Ionicons>
+            </View>
+          ),
         }}
       />
       <Tabs.Screen
@@ -59,6 +79,15 @@ export default function TabLayout() {
               color={color}
               size={24}
             />
+          ),
+          headerRight: () => (
+            <View style={styles.headerRight}>
+              <View style={styles.tabsButton}>
+                <Text style={{ fontSize: 10, fontWeight: "bold" }}>90</Text>
+              </View>
+              <Ionicons name="notifications" size={20}></Ionicons>
+              <Ionicons name="ellipsis-vertical" size={20}></Ionicons>
+            </View>
           ),
         }}
       />
@@ -78,3 +107,24 @@ export default function TabLayout() {
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  headerRight: {
+    height: "100%",
+    flexDirection: "row",
+    gap: 24,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    paddingRight: 16,
+  },
+  tabsButton: {
+    borderRadius: 6,
+    borderWidth: 1.5,
+    borderColor: "#000000",
+    width: 22,
+    height: 22,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
