@@ -1,7 +1,7 @@
 import { Article } from "@/types";
 
 const articles: Record<string, Article> = {
-  first: {
+  dummy: {
     title: "Dummy Article",
     description: "A short description of the article",
     image: require("@/assets/images/articles/dummy-article.png"),
@@ -12,20 +12,6 @@ const articles: Record<string, Article> = {
       {
         title: "Section title",
         content: "The contents of this section",
-      },
-    ],
-  },
-  second: {
-    title: "Second Dummy Article",
-    description: "A short description of the article :3",
-    image: require("@/assets/images/articles/dummy-article.png"),
-    content: [
-      {
-        content: "The contents of the article",
-      },
-      {
-        title: "Section title",
-        content: "The contents of this section... again :3",
       },
     ],
   },
