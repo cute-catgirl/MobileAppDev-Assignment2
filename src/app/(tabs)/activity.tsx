@@ -42,13 +42,18 @@ export default function Activity() {
       <View style={styles.activitySectionCard}>
         {/* section header */}
         <View style={[styles.flexRow, styles.justifyBetween]}>
-          <View style={styles.flexRow}>
-            <Ionicons 
-              name="book-outline"
-              style={styles.sectionActivityIcon}
-            />
-            <Text style={styles.sectionHeaderText}>
-              Articles read this month
+          <View>
+            <View style={styles.flexRow}>
+              <Ionicons 
+                name="book-outline"
+                style={styles.sectionActivityIcon}
+              />
+              <Text style={styles.sectionHeaderText}>
+                Articles read this month
+              </Text>
+            </View>
+            <Text style={styles.sectionTimeText}>
+              {readArticles.time}
             </Text>
           </View>
           <Ionicons 
@@ -58,10 +63,7 @@ export default function Activity() {
         </View>
         {/* section content */}
         <View style={[styles.flexRow, styles.justifyBetween]}>
-          <View>
-            <Text style={styles.sectionTimeText}>{readArticles.time}</Text>
-            <Text style={styles.sectionCountText}>{readArticles.count}</Text>
-          </View>
+          <Text style={styles.sectionCountText}>{readArticles.count}</Text> 
           <View style={styles.articlesReadGraph}>
             {readArticles.graphInfo.map((bar, b) => (
               <View key={b} style={styles.articleGraphEntry}>
@@ -81,18 +83,17 @@ export default function Activity() {
       <View style={styles.activitySectionCard}>
         {/* section header */}
         <View style={[styles.flexRow, styles.justifyBetween]}>
-          <View style={styles.flexRow}>
-            {/* <Image
-              source={require("@/assets/images/icon.png")}
-              style={styles.sectionActivityIcon}
-            /> */}
-            <Ionicons
-              name="bookmark-outline"
-              style={styles.sectionActivityIcon}
-            />
-            <Text style={styles.sectionHeaderText}>
-              Articles saved this month
-            </Text>
+          <View>
+            <View style={styles.flexRow}>
+              <Ionicons
+                name="bookmark-outline"
+                style={styles.sectionActivityIcon}
+              />
+              <Text style={styles.sectionHeaderText}>
+                Articles saved this month
+              </Text>
+            </View>
+            <Text style={styles.sectionTimeText}>{savedArticles.time}</Text>
           </View>
           <Ionicons 
             name="chevron-forward-outline"
@@ -101,12 +102,9 @@ export default function Activity() {
         </View>
         {/* section content */}
         <View style={[styles.flexRow, styles.justifyBetween]}>
-          <View>
-            <Text style={styles.sectionTimeText}>{savedArticles.time}</Text>
-            <Text style={styles.sectionCountText}>
-              {savedArticles.articleImages.length}
-            </Text>
-          </View>
+          <Text style={styles.sectionCountText}>
+            {savedArticles.articleImages.length}
+          </Text>
           <View style={styles.savedArticlesImageContainer}>
             {savedArticles.articleImages.map((articleImage, i) => (
               <Image
@@ -149,13 +147,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     rowGap: 10,
+    marginTop: 5,
   },
   activitySectionCard: {
     minHeight: 100,
     backgroundColor: "#ffffff",
     borderColor: "#bdbcbc",
     borderWidth: 1,
-    width: "80%",
+    width: "90%",
     borderRadius: 5,
     padding: 10,
     textAlign: "left",
@@ -192,13 +191,13 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   userReadingSection: {
-    width: "80%",
+    width: "90%",
     alignItems: "center",
     justifyContent: "center",
     rowGap: 5,
   },
   userReadingText: {
-    fontSize: 20,
+    fontSize: 18,
   },
   onWikiDeviceBox: {
     backgroundColor: "#cbeaf7",
@@ -246,7 +245,7 @@ const styles = StyleSheet.create({
   },
   topCategoryText: {
     color: "#595959",
-    fontSize: 18,
+    fontSize: 16,
     paddingLeft: 20,
     paddingVertical: 10,
   },
