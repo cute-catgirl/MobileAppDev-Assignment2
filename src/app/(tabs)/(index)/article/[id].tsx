@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     justifyContent: "flex-start",
+    backgroundColor: "white",
   },
   coverImage: {
     maxHeight: 300,

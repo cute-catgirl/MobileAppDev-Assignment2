@@ -58,8 +58,4 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     fontWeight: "800",
   },
-  articleTitle: {
-    fontStyle: "italic",
-    fontWeight: "800",
-  },
 });
