@@ -1,4 +1,5 @@
 import articles from "@/data/articles";
+import { Ionicons } from "@react-native-vector-icons/ionicons";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function Activity() {
@@ -42,16 +43,16 @@ export default function Activity() {
         {/* section header */}
         <View style={[styles.flexRow, styles.justifyBetween]}>
           <View style={styles.flexRow}>
-            <Image
-              source={require("@/assets/images/icon.png")}
+            <Ionicons 
+              name="book-outline"
               style={styles.sectionActivityIcon}
             />
             <Text style={styles.sectionHeaderText}>
               Articles read this month
             </Text>
           </View>
-          <Image
-            source={require("@/assets/images/icon.png")}
+          <Ionicons 
+            name="chevron-forward-outline"
             style={styles.sectionDropdownIcon}
           />
         </View>
@@ -81,16 +82,20 @@ export default function Activity() {
         {/* section header */}
         <View style={[styles.flexRow, styles.justifyBetween]}>
           <View style={styles.flexRow}>
-            <Image
+            {/* <Image
               source={require("@/assets/images/icon.png")}
+              style={styles.sectionActivityIcon}
+            /> */}
+            <Ionicons
+              name="bookmark-outline"
               style={styles.sectionActivityIcon}
             />
             <Text style={styles.sectionHeaderText}>
               Articles saved this month
             </Text>
           </View>
-          <Image
-            source={require("@/assets/images/icon.png")}
+          <Ionicons 
+            name="chevron-forward-outline"
             style={styles.sectionDropdownIcon}
           />
         </View>
@@ -118,8 +123,8 @@ export default function Activity() {
       <View style={styles.activitySectionCard}>
         {/* section header */}
         <View style={styles.flexRow}>
-          <Image
-            source={require("@/assets/images/icon.png")}
+          <Ionicons 
+            name="shapes-outline"
             style={styles.sectionActivityIcon}
           />
           <Text style={styles.sectionHeaderText}>
@@ -164,12 +169,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   sectionActivityIcon: {
+    color: "#000000",
     width: 12,
     height: 12,
+    paddingRight: 20,
   },
   sectionDropdownIcon: {
-    width: 12,
-    height: 12,
+    color: "#000000",
+    width: 16,
+    height: 16,
   },
   sectionHeaderText: {
     color: "#000000",
