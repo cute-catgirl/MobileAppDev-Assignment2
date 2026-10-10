@@ -6,7 +6,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 export default function Activity() {
   // values for the site to reference, meant to make it easier to make changes to the hardcoded details of the page
   const username = "USER";
-  const device = "ANDRIOD";
+  const device = "ANDROID";
   const timeReading = 245;
   const readArticles = {
     time: "October 6",
@@ -21,9 +21,9 @@ export default function Activity() {
   const savedArticles = {
     time: "October 2",
     articleImages: [
-      articles["dummy"].image,
-      articles["dummy"].image,
-      articles["dummy"].image,
+      articles["cat"].image,
+      articles["nitw"].image,
+      articles["outerwilds"].image,
     ],
   };
   const topCategories = [
