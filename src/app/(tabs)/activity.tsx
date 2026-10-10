@@ -1,5 +1,6 @@
 import articles from "@/data/articles";
 import { Ionicons } from "@react-native-vector-icons/ionicons";
+import { LinearGradient } from "expo-linear-gradient";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 export default function Activity() {
@@ -25,9 +26,18 @@ export default function Activity() {
       articles["dummy"].image,
     ],
   };
-  const topCategories = ["Category 1", "Category 2", "Category 3"];
+  const topCategories = [
+    "Indie games",
+    "Windows games",
+    "Domesticated animals",
+  ];
   return (
     <View style={styles.container}>
+      <LinearGradient
+        // Background Linear Gradient
+        colors={["#ffffff", "#6699FF26"]}
+        style={styles.background}
+      />
       {/* user's reading section */}
       <View style={styles.userReadingSection}>
         <Text style={styles.userReadingText}>{username}'s reading</Text>
@@ -150,11 +160,19 @@ export default function Activity() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: "100%",
     alignItems: "center",
     justifyContent: "flex-start",
     rowGap: 10,
     marginTop: 5,
+  },
+  background: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    height: "100%",
   },
   activitySectionCard: {
     minHeight: 100,
@@ -200,26 +218,31 @@ const styles = StyleSheet.create({
     rowGap: 5,
   },
   userReadingText: {
-    fontSize: 18,
+    fontSize: 22,
+    fontWeight: 500,
+    marginTop: 16,
   },
   onWikiDeviceBox: {
-    backgroundColor: "#cbeaf7",
-    borderRadius: 13,
-    paddingVertical: 6,
-    paddingHorizontal: 10,
+    backgroundColor: "#e8eeff",
+    borderRadius: 8,
+    paddingVertical: 2,
+    paddingHorizontal: 8,
     justifyContent: "center",
   },
   onWikiDeviceText: {
     color: "#232324",
-    fontSize: 8,
+    fontSize: 11,
+    fontFamily: "monospace",
   },
   displayedTimeSpentReadingText: {
-    color: "#ffbb00",
+    color: "#FF9500",
     fontSize: 30,
     paddingTop: 5,
+    fontWeight: 600,
   },
   timeSpentReadingText: {
-    fontSize: 12,
+    fontSize: 13,
+    fontWeight: 600,
   },
   articlesReadGraph: {
     flexDirection: "row",
@@ -244,13 +267,15 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   topCategoryEntry: {
-    rowGap: 10,
+    justifyContent: "center",
   },
   topCategoryText: {
     color: "#595959",
     fontSize: 16,
     paddingLeft: 20,
-    paddingVertical: 10,
+    paddingVertical: 20,
+    textAlignVertical: "center",
+    fontWeight: 600,
   },
   topCategorySeperator: {
     backgroundColor: "#ecebeb",
