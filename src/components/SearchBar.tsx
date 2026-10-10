@@ -1,7 +1,7 @@
 import { Ionicons } from "@react-native-vector-icons/ionicons";
 import {
     StyleSheet,
-    Text,
+    TextInput,
     View
 } from "react-native";
 
@@ -14,9 +14,12 @@ return(
               color="#72777d"
               size={24}
         />
-        <Text style={styles.textSection}>
-            Search Wikipedia
-        </Text>
+        <TextInput
+            style={styles.textSection}
+            placeholder="Search Wikipedia"
+            underlineColorAndroid="transparent"
+            selectionColor="#72777d"
+        />
         <Ionicons
               name="mic-sharp"
               color="#72777d"
@@ -35,7 +38,8 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         maxHeight: 50,
         width: "100%",
-        margin: 8,
+        marginTop: 8,
+        marginBottom: 8,
         padding: 16,
         borderRadius: 25,
     },
@@ -45,5 +49,7 @@ const styles = StyleSheet.create({
         width: "100%",
         textAlign:"left",
         margin: 16,
+        borderWidth: 0,
+        outlineWidth: 0,
     }
 });
