@@ -18,6 +18,7 @@ return(
             style={styles.textSection}
             placeholder="Search Wikipedia"
             underlineColorAndroid="transparent"
+            selectionColor="#72777d"
         />
         <Ionicons
               name="mic-sharp"
@@ -37,7 +38,8 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         maxHeight: 50,
         width: "100%",
-        margin: 8,
+        marginTop: 8,
+        marginBottom: 8,
         padding: 16,
         borderRadius: 25,
     },
@@ -48,6 +50,6 @@ const styles = StyleSheet.create({
         textAlign:"left",
         margin: 16,
         borderWidth: 0,
-        outlineWidth: 0
+        outlineWidth: 0,
     }
 });
