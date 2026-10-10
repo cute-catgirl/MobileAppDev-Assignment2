@@ -16,24 +16,23 @@ export default function Search() {
         <Text style={styles.history}>History</Text>
         <Ionicons
           style={styles.icons}
-          name="filter-sharp"
+          name="filter"
           color="#202122"
           size={24}
         />
-        <Ionicons
-          style={styles.icons}
-          name="trash-sharp"
-          color="#202122"
-          size={24}
-        />
+        <Ionicons style={styles.icons} name="trash" color="#202122" size={24} />
       </View>
       {articles.slice(0, 10).map((datedarticle, index) => {
         const showDate =
           index === 0 ||
-          datedarticle.date.toDateString() !== articles[index - 1].date.toDateString();
+          datedarticle.date.toDateString() !==
+            articles[index - 1].date.toDateString();
 
         return (
-          <View key={`${datedarticle.article.title}-${index}`} style={styles.dateGroup}>
+          <View
+            key={`${datedarticle.article.title}-${index}`}
+            style={styles.dateGroup}
+          >
             {showDate && (
               <Text style={styles.dateTitle}>
                 {datedarticle.date.toLocaleDateString(undefined, {
@@ -85,13 +84,14 @@ const styles = StyleSheet.create({
   },
   dateTitle: {
     width: "100%",
-    color: "#72777d",
+    color: "black",
     fontSize: 14,
     marginLeft: 8,
     marginBottom: 8,
     marginTop: 8,
+    fontWeight: 700,
   },
   icons: {
-    margin:8,
-  }
+    margin: 8,
+  },
 });
