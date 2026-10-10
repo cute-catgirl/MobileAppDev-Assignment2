@@ -1,4 +1,4 @@
-import { Article } from "@/types";
+import type { Article } from "@/types";
 import {
     Image,
     StyleProp,
@@ -36,8 +36,6 @@ const styles = StyleSheet.create({
     maxHeight: 100,
     width: "100%",
     padding: 8,
-    marginBottom: 8,
-    marginTop: 8,
   },
   leftSection: {
     flex: 1,

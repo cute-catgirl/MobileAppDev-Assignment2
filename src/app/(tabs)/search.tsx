@@ -61,12 +61,14 @@ const styles = StyleSheet.create({
     padding: 8,
     alignItems: "stretch",
     justifyContent: "flex-start",
+    backgroundColor: "white",
   },
-  
+
   history: {
     flex: 1,
     color: "rgb(28, 28, 30)",
-    fontFamily: 'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    fontFamily:
+      'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     fontWeight: 500,
     fontSize: 18,
     marginLeft: 8,
